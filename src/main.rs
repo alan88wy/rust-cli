@@ -1,3 +1,8 @@
+// mod input;
+// mod arguments;
+mod readfs;
 fn main() {
-    println!("Hello, world!");
+    // input::run();
+    // arguments::run();
+    readfs::run();
 }
