@@ -1,5 +1,6 @@
 use std::env;
 use std::fs;
+use std::io::prelude::*;
 
 pub fn run() {
     let mut file = String::from("test.md");
@@ -14,4 +15,11 @@ pub fn run() {
     speech.push_str("and do the other thing\n");
 
     let _ = fs::write(file, speech);
+
+    let mut file = fs::OpenOptions::new()
+        .append(true)
+        .open("test.txt")
+        .unwrap();
+
+    let _ = file.write(b"\nLast statement");
 }
